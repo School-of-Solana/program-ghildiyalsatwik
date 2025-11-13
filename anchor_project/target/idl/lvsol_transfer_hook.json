@@ -1,0 +1,25 @@
+{
+  "address": "tDGxsLSWHUQ678asjwp1UTdtPq5VFw9NNFDskxcsBdR",
+  "metadata": {
+    "name": "lvsol_transfer_hook",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "init",
+      "discriminator": [
+        220,
+        59,
+        207,
+        236,
+        108,
+        250,
+        47,
+        100
+      ],
+      "accounts": [],
+      "args": []
+    }
+  ]
+}

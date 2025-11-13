@@ -1,0 +1,1 @@
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/sbpf-solana-solana/release/liblvsol_transfer_hook.rlib: /Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs

@@ -1,0 +1,25 @@
+{
+  "address": "C6KnmAotGiA1B9ii2mWz4PB1iujSjXcZfB5z78mgg11b",
+  "metadata": {
+    "name": "vault_manager",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "initialize",
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [],
+      "args": []
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/sbpf-solana-solana/release/vault_manager.so: /Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs

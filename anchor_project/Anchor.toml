@@ -1,0 +1,11 @@
+[programs.localnet]
+vault_manager = "C6KnmAotGiA1B9ii2mWz4PB1iujSjXcZfB5z78mgg11b"
+lvsol_transfer_hook = "tDGxsLSWHUQ678asjwp1UTdtPq5VFw9NNFDskxcsBdR"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[features]
+seeds = true
+skip-lint = false

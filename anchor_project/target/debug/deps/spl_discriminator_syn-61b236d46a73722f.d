@@ -1,0 +1,9 @@
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/spl_discriminator_syn-61b236d46a73722f.d: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/error.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/parser.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/libspl_discriminator_syn-61b236d46a73722f.rlib: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/error.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/parser.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/libspl_discriminator_syn-61b236d46a73722f.rmeta: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/error.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/parser.rs
+
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/lib.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/error.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-syn-0.2.1/src/parser.rs:
