@@ -1,0 +1,7 @@
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/solana_system_interface-220bf0c4d1a3a21c.d: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/error.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/instruction.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/libsolana_system_interface-220bf0c4d1a3a21c.rmeta: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/error.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/instruction.rs
+
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/lib.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/error.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-system-interface-1.0.0/src/instruction.rs:

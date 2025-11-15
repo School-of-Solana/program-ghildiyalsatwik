@@ -1,0 +1,12 @@
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/thiserror-c607401c09ff649e.d: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/aserror.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/display.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/var.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/private.rs /Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/build/thiserror-ea13c3218148d05b/out/private.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/libthiserror-c607401c09ff649e.rmeta: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/aserror.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/display.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/var.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/private.rs /Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/build/thiserror-ea13c3218148d05b/out/private.rs
+
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/lib.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/aserror.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/display.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/var.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.17/src/private.rs:
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/build/thiserror-ea13c3218148d05b/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/build/thiserror-ea13c3218148d05b/out

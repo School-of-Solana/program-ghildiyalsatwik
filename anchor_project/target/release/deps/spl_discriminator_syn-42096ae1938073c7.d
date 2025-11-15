@@ -1,9 +1,0 @@
-/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/release/deps/libspl_discriminator_syn-42096ae1938073c7.rmeta: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/error.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/parser.rs
-
-/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/release/deps/libspl_discriminator_syn-42096ae1938073c7.rlib: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/error.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/parser.rs
-
-/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/release/deps/spl_discriminator_syn-42096ae1938073c7.d: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/error.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/parser.rs
-
-/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/lib.rs:
-/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/error.rs:
-/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spl-discriminator-syn-0.2.1/src/parser.rs:

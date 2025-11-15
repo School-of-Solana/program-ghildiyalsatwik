@@ -1,0 +1,12 @@
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/serde-d0c4ab46f0235a53.d: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/build/serde-7cb620e44cc644da/out/private.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/deps/libserde-d0c4ab46f0235a53.rmeta: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/build/serde-7cb620e44cc644da/out/private.rs
+
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/build/serde-7cb620e44cc644da/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/build/serde-7cb620e44cc644da/out

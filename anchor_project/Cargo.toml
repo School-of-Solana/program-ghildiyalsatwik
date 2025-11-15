@@ -4,6 +4,10 @@ members = [
   "programs/lvsol_transfer_hook"
 ]
 
+[workspace.dependencies]
+anchor-lang = "0.31.1"
+anchor-spl  = "0.31.1"
+
 resolver = "2"
 
 [profile.release]

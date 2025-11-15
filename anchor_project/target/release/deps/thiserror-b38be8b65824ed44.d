@@ -1,0 +1,10 @@
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/release/deps/libthiserror-b38be8b65824ed44.rmeta: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/aserror.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/display.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/provide.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/release/deps/libthiserror-b38be8b65824ed44.rlib: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/aserror.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/display.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/provide.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/release/deps/thiserror-b38be8b65824ed44.d: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/aserror.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/display.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/provide.rs
+
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/lib.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/aserror.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/display.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.69/src/provide.rs:

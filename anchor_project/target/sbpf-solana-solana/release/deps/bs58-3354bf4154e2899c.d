@@ -1,0 +1,10 @@
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/sbpf-solana-solana/release/deps/libbs58-3354bf4154e2899c.rmeta: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/alphabet.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/decode.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/encode.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/sbpf-solana-solana/release/deps/libbs58-3354bf4154e2899c.rlib: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/alphabet.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/decode.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/encode.rs
+
+/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/sbpf-solana-solana/release/deps/bs58-3354bf4154e2899c.d: /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/lib.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/alphabet.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/decode.rs /Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/encode.rs
+
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/lib.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/alphabet.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/decode.rs:
+/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bs58-0.5.1/src/encode.rs:
