@@ -13,6 +13,43 @@ export type LvsolTransferHook = {
   },
   "instructions": [
     {
+      "name": "execute",
+      "discriminator": [
+        130,
+        221,
+        242,
+        154,
+        13,
+        193,
+        189,
+        29
+      ],
+      "accounts": [
+        {
+          "name": "mint"
+        },
+        {
+          "name": "from",
+          "writable": true
+        },
+        {
+          "name": "to",
+          "writable": true
+        },
+        {
+          "name": "vaultManagerProgram"
+        },
+        {
+          "name": "tokenProgram"
+        },
+        {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
       "name": "init",
       "discriminator": [
         220,
@@ -26,6 +63,18 @@ export type LvsolTransferHook = {
       ],
       "accounts": [],
       "args": []
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "invalidDestination",
+      "msg": "Transfers to non-system accounts are not allowed."
+    },
+    {
+      "code": 6001,
+      "name": "invalidDelegate",
+      "msg": "Vault manager is not the delegate for this mint."
     }
   ]
 };

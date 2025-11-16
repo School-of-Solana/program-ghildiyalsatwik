@@ -117,10 +117,6 @@ export type VaultManager = {
         },
         {
           "name": "vaultPda",
-          "docs": [
-            "Seeds constrain this PDA and we enforce the owner to be the system program,",
-            "so it is safe to treat it as an unchecked account that just holds SOL."
-          ],
           "writable": true,
           "pda": {
             "seeds": [
@@ -148,14 +144,14 @@ export type VaultManager = {
         {
           "name": "lvsolMint",
           "docs": [
-            "The mint account for lvSOL (Token-2022)"
+            "Mint for lvSOL (Token-2022)"
           ],
           "writable": true
         },
         {
           "name": "userLvsolAta",
           "docs": [
-            "User's ATA for lvSOL"
+            "User's lvSOL ATA"
           ],
           "writable": true,
           "pda": {

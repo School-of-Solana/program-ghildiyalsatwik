@@ -7,6 +7,43 @@
   },
   "instructions": [
     {
+      "name": "execute",
+      "discriminator": [
+        130,
+        221,
+        242,
+        154,
+        13,
+        193,
+        189,
+        29
+      ],
+      "accounts": [
+        {
+          "name": "mint"
+        },
+        {
+          "name": "from",
+          "writable": true
+        },
+        {
+          "name": "to",
+          "writable": true
+        },
+        {
+          "name": "vault_manager_program"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
       "name": "init",
       "discriminator": [
         220,
@@ -20,6 +57,18 @@
       ],
       "accounts": [],
       "args": []
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidDestination",
+      "msg": "Transfers to non-system accounts are not allowed."
+    },
+    {
+      "code": 6001,
+      "name": "InvalidDelegate",
+      "msg": "Vault manager is not the delegate for this mint."
     }
   ]
 }

@@ -1,9 +1,18 @@
 use anchor_lang::prelude::*;
 use anchor_spl::{
     associated_token::AssociatedToken,
-    token_interface::{TokenAccount, TokenInterface, Mint, MintToChecked, mint_to_checked},
+    token_interface::{
+        spl_token_2022::id as token_2022_id,
+        spl_token_2022::instruction::AuthorityType,
+        mint_to,
+        set_authority,
+        Mint,
+        MintTo,
+        SetAuthority,
+        TokenAccount,
+        TokenInterface,
+    },
 };
-use anchor_spl::token_interface::spl_token_2022::id as token_2022_id;
 use crate::state::vault_state::{InheritorShare, VaultState};
 
 #[derive(Accounts)]
@@ -20,9 +29,7 @@ pub struct Initialize<'info> {
     )]
     pub vault_state: Account<'info, VaultState>,
 
-    /// CHECK:
-    /// Seeds constrain this PDA and we enforce the owner to be the system program,
-    /// so it is safe to treat it as an unchecked account that just holds SOL.
+    /// CHECK: PDA holds SOL, no serialization
     #[account(
         init,
         payer = user,
@@ -33,14 +40,14 @@ pub struct Initialize<'info> {
     )]
     pub vault_pda: AccountInfo<'info>,
 
-    /// The mint account for lvSOL (Token-2022)
+    /// Mint for lvSOL (Token-2022)
     #[account(
         mut,
         constraint = lvsol_mint.to_account_info().owner == &token_2022_id()
     )]
     pub lvsol_mint: InterfaceAccount<'info, Mint>,
 
-    /// User's ATA for lvSOL
+    /// User's lvSOL ATA
     #[account(
         init,
         payer = user,
@@ -63,10 +70,9 @@ pub fn handler(
     inheritors: Vec<InheritorShare>,
 ) -> Result<()> {
     let user = &ctx.accounts.user;
-    let vault_state = &mut ctx.accounts.vault_state;
     let vault_pda = &ctx.accounts.vault_pda;
 
-    // Transfer SOL from user → vault PDA
+    // ✅ 1. Transfer SOL from user → vault PDA
     anchor_lang::system_program::transfer(
         CpiContext::new(
             ctx.accounts.system_program.to_account_info(),
@@ -78,27 +84,11 @@ pub fn handler(
         amount_sol,
     )?;
 
-    // Mint lvSOL to user equivalent to locked SOL
-    let user_key = user.key();
-    let pda_bump = ctx.bumps.vault_pda;
-    let seeds = &[b"vault-sol", user_key.as_ref(), &[pda_bump]];
-    let signer = &[&seeds[..]];
+    // ✅ 2. Mint lvSOL to user equivalent to locked SOL
+    mint_lvsol_to_user(&ctx, amount_sol)?;
 
-    mint_to_checked(
-        CpiContext::new_with_signer(
-            ctx.accounts.token_program.to_account_info(),
-            MintToChecked {
-                mint: ctx.accounts.lvsol_mint.to_account_info(),
-                to: ctx.accounts.user_lvsol_ata.to_account_info(),
-                authority: vault_pda.to_account_info(),
-            },
-            signer,
-        ),
-        amount_sol,
-        9, // decimals
-    )?;
-
-    // Store vault metadata
+    // ✅ 3. Store vault metadata
+    let vault_state = &mut ctx.accounts.vault_state;
     vault_state.owner = user.key();
     vault_state.locked_amount = amount_sol;
     vault_state.reward_lamports = reward_lamports;
@@ -106,7 +96,48 @@ pub fn handler(
     vault_state.inactivity_duration = inactivity_duration;
     vault_state.inheritors = inheritors;
     vault_state.lvsol_mint = ctx.accounts.lvsol_mint.key();
-    vault_state.vault_pda_bump = pda_bump;
+    vault_state.vault_pda_bump = ctx.bumps.vault_pda;
+
+    Ok(())
+}
+
+/// Helper: Mint lvSOL and set vault_manager as delegate
+pub fn mint_lvsol_to_user(ctx: &Context<Initialize>, amount: u64) -> Result<()> {
+    // --- 1️⃣ Mint tokens to user's lvSOL ATA ---
+    let user_key = ctx.accounts.user.key();
+    let seeds = &[
+        b"vault-sol",
+        user_key.as_ref(),
+        &[ctx.bumps.vault_pda],
+    ];
+    let signer = &[&seeds[..]];
+
+    let mint_ctx = CpiContext::new_with_signer(
+        ctx.accounts.token_program.to_account_info(),
+        MintTo {
+            mint: ctx.accounts.lvsol_mint.to_account_info(),
+            to: ctx.accounts.user_lvsol_ata.to_account_info(),
+            authority: ctx.accounts.vault_pda.to_account_info(),
+        },
+        signer,
+    );
+
+    mint_to(mint_ctx, amount)?;
+
+    // --- 2️⃣ Immediately set vault_manager as delegate ---
+    let set_delegate_ctx = CpiContext::new(
+        ctx.accounts.token_program.to_account_info(),
+        SetAuthority {
+            current_authority: ctx.accounts.user.to_account_info(),
+            account_or_mint: ctx.accounts.user_lvsol_ata.to_account_info(),
+        },
+    );
+
+    set_authority(
+        set_delegate_ctx,
+        AuthorityType::AccountOwner,
+        Some(*ctx.program_id), // VaultManager becomes permanent delegate
+    )?;
 
     Ok(())
 }
