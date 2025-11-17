@@ -4,7 +4,7 @@ use anchor_lang::prelude::*;
 pub mod instructions;
 pub mod state;
 
-pub use instructions::{AddSol, Initialize, Ping};
+pub use instructions::{AddSol, Initialize, Ping, TriggerInheritance};
 pub use state::vault_state::InheritorShare;
 
 pub(crate) mod __client_accounts_initialize {
@@ -16,13 +16,16 @@ pub(crate) mod __client_accounts_add_sol {
 pub(crate) mod __client_accounts_ping {
     pub use crate::instructions::ping::__client_accounts_ping::*;
 }
+pub(crate) mod __client_accounts_trigger_inheritance {
+    pub use crate::instructions::trigger_inheritance::__client_accounts_trigger_inheritance::*;
+}
 
 declare_id!("C6KnmAotGiA1B9ii2mWz4PB1iujSjXcZfB5z78mgg11b");
 
 #[program]
 pub mod vault_manager {
-    use super::instructions::{add_sol, initialize, ping};
-    use super::{AddSol, InheritorShare, Initialize, Ping};
+    use super::instructions::{add_sol, initialize, ping, trigger_inheritance};
+    use super::{AddSol, Initialize, Ping, TriggerInheritance, InheritorShare};
     use anchor_lang::prelude::*;
 
     pub fn initialize(
@@ -41,5 +44,9 @@ pub mod vault_manager {
 
     pub fn ping(ctx: Context<Ping>) -> Result<()> {
         ping::handler(ctx)
+    }
+
+    pub fn trigger_inheritance(ctx: Context<TriggerInheritance>) -> Result<()> {
+        trigger_inheritance::handler(ctx)
     }
 }

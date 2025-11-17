@@ -290,6 +290,95 @@ export type VaultManager = {
         }
       ],
       "args": []
+    },
+    {
+      "name": "triggerInheritance",
+      "discriminator": [
+        102,
+        13,
+        227,
+        85,
+        64,
+        58,
+        12,
+        49
+      ],
+      "accounts": [
+        {
+          "name": "caller",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "vaultState",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vault_state.owner",
+                "account": "vaultState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vaultPda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  45,
+                  115,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vault_state.owner",
+                "account": "vaultState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "lvsolMint",
+          "writable": true
+        },
+        {
+          "name": "vaultLvsolAccount",
+          "docs": [
+            "Token account of the vault PDA (to burn from)"
+          ],
+          "writable": true
+        },
+        {
+          "name": "tokenProgram"
+        },
+        {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
     }
   ],
   "accounts": [
@@ -322,6 +411,19 @@ export type VaultManager = {
       ]
     },
     {
+      "name": "inheritanceTriggered",
+      "discriminator": [
+        236,
+        16,
+        253,
+        180,
+        0,
+        41,
+        187,
+        191
+      ]
+    },
+    {
       "name": "pingEvent",
       "discriminator": [
         201,
@@ -338,8 +440,18 @@ export type VaultManager = {
   "errors": [
     {
       "code": 6000,
+      "name": "vaultStillActive",
+      "msg": "Vault is still active; cannot trigger inheritance."
+    },
+    {
+      "code": 6001,
       "name": "unauthorizedUser",
-      "msg": "You are not the owner of this vault."
+      "msg": "Unauthorized user."
+    },
+    {
+      "code": 6002,
+      "name": "lamportTransferFailed",
+      "msg": "Lamport transfer failed."
     }
   ],
   "types": [
@@ -359,6 +471,26 @@ export type VaultManager = {
           {
             "name": "amount",
             "type": "u64"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "inheritanceTriggered",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "triggeredBy",
+            "type": "pubkey"
           },
           {
             "name": "timestamp",
