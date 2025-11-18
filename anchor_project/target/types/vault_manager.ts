@@ -292,6 +292,100 @@ export type VaultManager = {
       "args": []
     },
     {
+      "name": "redeem",
+      "discriminator": [
+        184,
+        12,
+        86,
+        149,
+        70,
+        196,
+        97,
+        225
+      ],
+      "accounts": [
+        {
+          "name": "redeemer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "vaultState",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vault_state.owner",
+                "account": "vaultState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "vaultPda",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  118,
+                  97,
+                  117,
+                  108,
+                  116,
+                  45,
+                  115,
+                  111,
+                  108
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "vault_state.owner",
+                "account": "vaultState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "lvsolMint",
+          "writable": true
+        },
+        {
+          "name": "redeemerLvsolAccount",
+          "docs": [
+            "Redeemer’s lvSOL account (to burn from)"
+          ],
+          "writable": true
+        },
+        {
+          "name": "tokenProgram"
+        },
+        {
+          "name": "systemProgram",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "redeemAmount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
       "name": "triggerInheritance",
       "discriminator": [
         102,
@@ -435,6 +529,19 @@ export type VaultManager = {
         149,
         174
       ]
+    },
+    {
+      "name": "redeemed",
+      "discriminator": [
+        14,
+        29,
+        183,
+        71,
+        31,
+        165,
+        107,
+        38
+      ]
     }
   ],
   "errors": [
@@ -527,6 +634,22 @@ export type VaultManager = {
           {
             "name": "timestamp",
             "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "redeemed",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "redeemer",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
           }
         ]
       }
