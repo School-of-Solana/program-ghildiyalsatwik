@@ -2,15 +2,798 @@ warning: virtual workspace defaulting to `resolver = "1"` despite one or more wo
 note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
 note: to use the edition 2021 resolver, specify `workspace.resolver = "2"` in the workspace root's manifest
 note: for more details see https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
-   0.107723625s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint: stale: changed "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs"
-   0.107732041s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:           (vs) "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/vault_manager-54d4cc9e60e4d5f1/dep-lib-vault_manager"
-   0.107734666s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1763484310, nanos: 984148896 } < FileTime { seconds: 1763484314, nanos: 715198855 }
-   0.107783333s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint: fingerprint dirty for vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager)/Check { test: false }/TargetInner { ..: lib_target("vault_manager", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs", Edition2021) }
-   0.107790416s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/vault_manager-54d4cc9e60e4d5f1/dep-lib-vault_manager", reference_mtime: FileTime { seconds: 1763484310, nanos: 984148896 }, stale: "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs", stale_mtime: FileTime { seconds: 1763484314, nanos: 715198855 } }))
-   0.108545250s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint: stale: changed "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs"
-   0.108547333s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:           (vs) "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/vault_manager-de8811486e10b200/dep-test-lib-vault_manager"
-   0.108548791s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1763484310, nanos: 984166313 } < FileTime { seconds: 1763484314, nanos: 715198855 }
-   0.108590666s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint: fingerprint dirty for vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager)/Check { test: true }/TargetInner { ..: lib_target("vault_manager", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs", Edition2021) }
-   0.108594541s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/vault_manager-de8811486e10b200/dep-test-lib-vault_manager", reference_mtime: FileTime { seconds: 1763484310, nanos: 984166313 }, stale: "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs", stale_mtime: FileTime { seconds: 1763484314, nanos: 715198855 } }))
+     Locking 2 packages to latest compatible versions
+      Adding solana-slot-hashes v2.2.1 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v2)
+      Adding solana-slot-hashes v3.0.0
+   0.143120042s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint: fingerprint error for lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("lvsol_transfer_hook", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs", Edition2021) }
+   0.143327542s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/lvsol_transfer_hook-84ba1fdc5d8da9b9/lib-lvsol_transfer_hook`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.158407292s  INFO prepare_target{force=false package_id=anchor-lang v0.31.1 target="anchor_lang"}: cargo::core::compiler::fingerprint: fingerprint error for anchor-lang v0.31.1/Check { test: false }/TargetInner { ..: lib_target("anchor_lang", ["lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anchor-lang-0.31.1/src/lib.rs", Edition2021) }
+   0.158416792s  INFO prepare_target{force=false package_id=anchor-lang v0.31.1 target="anchor_lang"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/anchor-lang-4b646fd12adcac41/lib-anchor_lang`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.163962125s  INFO prepare_target{force=false package_id=solana-program v2.3.0 target="solana_program"}: cargo::core::compiler::fingerprint: fingerprint error for solana-program v2.3.0/Check { test: false }/TargetInner { ..: lib_target("solana_program", ["cdylib", "rlib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-program-2.3.0/src/lib.rs", Edition2021) }
+   0.163969625s  INFO prepare_target{force=false package_id=solana-program v2.3.0 target="solana_program"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/solana-program-5de94723f8392eb4/lib-solana_program`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.173037417s  INFO prepare_target{force=false package_id=solana-address-lookup-table-interface v2.2.2 target="solana_address_lookup_table_interface"}: cargo::core::compiler::fingerprint: fingerprint error for solana-address-lookup-table-interface v2.2.2/Check { test: false }/TargetInner { ..: lib_target("solana_address_lookup_table_interface", ["lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-address-lookup-table-interface-2.2.2/src/lib.rs", Edition2021) }
+   0.173047833s  INFO prepare_target{force=false package_id=solana-address-lookup-table-interface v2.2.2 target="solana_address_lookup_table_interface"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/solana-address-lookup-table-interface-be9d20cbfc564ccf/lib-solana_address_lookup_table_interface`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.173941208s  INFO prepare_target{force=false package_id=solana-slot-hashes v2.2.1 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v2) target="solana_slot_hashes"}: cargo::core::compiler::fingerprint: fingerprint error for solana-slot-hashes v2.2.1 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v2)/Check { test: false }/TargetInner { ..: lib_target("solana_slot_hashes", ["lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v2/src/lib.rs", Edition2021) }
+   0.173947958s  INFO prepare_target{force=false package_id=solana-slot-hashes v2.2.1 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v2) target="solana_slot_hashes"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/solana-slot-hashes-6283d6b4d38b84cb/lib-solana_slot_hashes`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.175093667s  INFO prepare_target{force=false package_id=solana-example-mocks v2.2.1 target="solana_example_mocks"}: cargo::core::compiler::fingerprint: fingerprint error for solana-example-mocks v2.2.1/Check { test: false }/TargetInner { ..: lib_target("solana_example_mocks", ["lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-example-mocks-2.2.1/src/lib.rs", Edition2021) }
+   0.175097792s  INFO prepare_target{force=false package_id=solana-example-mocks v2.2.1 target="solana_example_mocks"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/solana-example-mocks-27bdb39ffb6e9dcf/lib-solana_example_mocks`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.181741458s  INFO prepare_target{force=false package_id=solana-sysvar v2.3.0 target="solana_sysvar"}: cargo::core::compiler::fingerprint: fingerprint error for solana-sysvar v2.3.0/Check { test: false }/TargetInner { ..: lib_target("solana_sysvar", ["lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-sysvar-2.3.0/src/lib.rs", Edition2021) }
+   0.181748167s  INFO prepare_target{force=false package_id=solana-sysvar v2.3.0 target="solana_sysvar"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/solana-sysvar-c7e964f49605b9ad/lib-solana_sysvar`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.183114333s  INFO prepare_target{force=false package_id=anchor-spl v0.31.1 target="anchor_spl"}: cargo::core::compiler::fingerprint: fingerprint error for anchor-spl v0.31.1/Check { test: false }/TargetInner { ..: lib_target("anchor_spl", ["lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/anchor-spl-0.31.1/src/lib.rs", Edition2021) }
+   0.183121208s  INFO prepare_target{force=false package_id=anchor-spl v0.31.1 target="anchor_spl"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/anchor-spl-4efaa584c026b3a2/lib-anchor_spl`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.183683833s  INFO prepare_target{force=false package_id=spl-associated-token-account v6.0.0 target="spl_associated_token_account"}: cargo::core::compiler::fingerprint: fingerprint error for spl-associated-token-account v6.0.0/Check { test: false }/TargetInner { ..: lib_target("spl_associated_token_account", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-associated-token-account-6.0.0/src/lib.rs", Edition2021) }
+   0.183690333s  INFO prepare_target{force=false package_id=spl-associated-token-account v6.0.0 target="spl_associated_token_account"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-associated-token-account-c092b5f5d23388f8/lib-spl_associated_token_account`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.184651208s  INFO prepare_target{force=false package_id=spl-token v7.0.0 target="spl_token"}: cargo::core::compiler::fingerprint: fingerprint error for spl-token v7.0.0/Check { test: false }/TargetInner { ..: lib_target("spl_token", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-7.0.0/src/lib.rs", Edition2021) }
+   0.184657708s  INFO prepare_target{force=false package_id=spl-token v7.0.0 target="spl_token"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-token-55d0827674411280/lib-spl_token`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.185653000s  INFO prepare_target{force=false package_id=spl-token-2022 v6.0.0 target="spl_token_2022"}: cargo::core::compiler::fingerprint: fingerprint error for spl-token-2022 v6.0.0/Check { test: false }/TargetInner { ..: lib_target("spl_token_2022", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-2022-6.0.0/src/lib.rs", Edition2021) }
+   0.185657250s  INFO prepare_target{force=false package_id=spl-token-2022 v6.0.0 target="spl_token_2022"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-token-2022-8600907e6741f7b1/lib-spl_token_2022`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.189519333s  INFO prepare_target{force=false package_id=spl-elgamal-registry v0.1.1 target="spl_elgamal_registry"}: cargo::core::compiler::fingerprint: fingerprint error for spl-elgamal-registry v0.1.1/Check { test: false }/TargetInner { ..: lib_target("spl_elgamal_registry", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-elgamal-registry-0.1.1/src/lib.rs", Edition2021) }
+   0.189524167s  INFO prepare_target{force=false package_id=spl-elgamal-registry v0.1.1 target="spl_elgamal_registry"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-elgamal-registry-e2828a771488eb37/lib-spl_elgamal_registry`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.190166708s  INFO prepare_target{force=false package_id=spl-token-confidential-transfer-proof-extraction v0.2.1 target="spl_token_confidential_transfer_proof_extraction"}: cargo::core::compiler::fingerprint: fingerprint error for spl-token-confidential-transfer-proof-extraction v0.2.1/Check { test: false }/TargetInner { ..: lib_target("spl_token_confidential_transfer_proof_extraction", ["lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-confidential-transfer-proof-extraction-0.2.1/src/lib.rs", Edition2021) }
+   0.190170333s  INFO prepare_target{force=false package_id=spl-token-confidential-transfer-proof-extraction v0.2.1 target="spl_token_confidential_transfer_proof_extraction"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-token-confidential-transfer-proof-extraction-b34e761619e42cd3/lib-spl_token_confidential_transfer_proof_extraction`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.192279542s  INFO prepare_target{force=false package_id=spl-transfer-hook-interface v0.9.0 target="spl_transfer_hook_interface"}: cargo::core::compiler::fingerprint: fingerprint error for spl-transfer-hook-interface v0.9.0/Check { test: false }/TargetInner { ..: lib_target("spl_transfer_hook_interface", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-transfer-hook-interface-0.9.0/src/lib.rs", Edition2021) }
+   0.192283625s  INFO prepare_target{force=false package_id=spl-transfer-hook-interface v0.9.0 target="spl_transfer_hook_interface"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-transfer-hook-interface-a7aee13c92fb07d9/lib-spl_transfer_hook_interface`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: std::rt::lang_start_internal
+  20: _main
+   0.192909625s  INFO prepare_target{force=false package_id=spl-program-error v0.6.0 target="spl_program_error"}: cargo::core::compiler::fingerprint: fingerprint error for spl-program-error v0.6.0/Check { test: false }/TargetInner { ..: lib_target("spl_program_error", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-program-error-0.6.0/src/lib.rs", Edition2021) }
+   0.192912875s  INFO prepare_target{force=false package_id=spl-program-error v0.6.0 target="spl_program_error"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-program-error-645613cb8b7d963b/lib-spl_program_error`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.193329167s  INFO prepare_target{force=false package_id=spl-tlv-account-resolution v0.9.0 target="spl_tlv_account_resolution"}: cargo::core::compiler::fingerprint: fingerprint error for spl-tlv-account-resolution v0.9.0/Check { test: false }/TargetInner { ..: lib_target("spl_tlv_account_resolution", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-tlv-account-resolution-0.9.0/src/lib.rs", Edition2021) }
+   0.193332208s  INFO prepare_target{force=false package_id=spl-tlv-account-resolution v0.9.0 target="spl_tlv_account_resolution"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-tlv-account-resolution-7df387be2919df32/lib-spl_tlv_account_resolution`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: cargo::core::compiler::compile
+  11: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  12: cargo::ops::cargo_compile::compile_ws
+  13: cargo::ops::cargo_compile::compile_with_exec
+  14: cargo::ops::cargo_compile::compile
+  15: cargo::commands::check::exec
+  16: <cargo::cli::Exec>::exec
+  17: cargo::main
+  18: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  19: std::rt::lang_start::<()>::{closure#0}
+  20: std::rt::lang_start_internal
+  21: _main
+   0.194169125s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint: fingerprint error for lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("lvsol_transfer_hook", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs", Edition2021) }
+   0.194174208s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/lvsol_transfer_hook-5fa3ed5e902da4d2/test-lib-lvsol_transfer_hook`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.206193667s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint: fingerprint error for vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager)/Check { test: false }/TargetInner { ..: lib_target("vault_manager", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs", Edition2021) }
+   0.206205542s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/vault_manager-6a55f13cb639aeb3/lib-vault_manager`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.206930667s  INFO prepare_target{force=false package_id=spl-associated-token-account v8.0.0 target="spl_associated_token_account"}: cargo::core::compiler::fingerprint: fingerprint error for spl-associated-token-account v8.0.0/Check { test: false }/TargetInner { ..: lib_target("spl_associated_token_account", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-associated-token-account-8.0.0/src/lib.rs", Edition2021) }
+   0.206935750s  INFO prepare_target{force=false package_id=spl-associated-token-account v8.0.0 target="spl_associated_token_account"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-associated-token-account-6f1c70ef3b2acb1e/lib-spl_associated_token_account`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.209623333s  INFO prepare_target{force=false package_id=solana-sysvar v3.1.0 target="solana_sysvar"}: cargo::core::compiler::fingerprint: fingerprint error for solana-sysvar v3.1.0/Check { test: false }/TargetInner { ..: lib_target("solana_sysvar", ["lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/solana-sysvar-3.1.0/src/lib.rs", Edition2021) }
+   0.209627583s  INFO prepare_target{force=false package_id=solana-sysvar v3.1.0 target="solana_sysvar"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/solana-sysvar-8ba43fcc75175bec/lib-solana_sysvar`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.211069958s  INFO prepare_target{force=false package_id=solana-slot-hashes v3.0.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v3) target="solana_slot_hashes"}: cargo::core::compiler::fingerprint: fingerprint error for solana-slot-hashes v3.0.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v3)/Check { test: false }/TargetInner { ..: lib_target("solana_slot_hashes", ["lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v3/src/lib.rs", Edition2021) }
+   0.211076292s  INFO prepare_target{force=false package_id=solana-slot-hashes v3.0.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v3) target="solana_slot_hashes"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/solana-slot-hashes-f056372c1eab9831/lib-solana_slot_hashes`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.214474083s  INFO prepare_target{force=false package_id=spl-token-2022 v10.0.0 target="spl_token_2022"}: cargo::core::compiler::fingerprint: fingerprint error for spl-token-2022 v10.0.0/Check { test: false }/TargetInner { ..: lib_target("spl_token_2022", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-2022-10.0.0/src/lib.rs", Edition2021) }
+   0.214477667s  INFO prepare_target{force=false package_id=spl-token-2022 v10.0.0 target="spl_token_2022"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-token-2022-304873086daca849/lib-spl_token_2022`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.216478875s  INFO prepare_target{force=false package_id=spl-transfer-hook-interface v0.8.2 target="spl_transfer_hook_interface"}: cargo::core::compiler::fingerprint: fingerprint error for spl-transfer-hook-interface v0.8.2/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("spl_transfer_hook_interface", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-transfer-hook-interface-0.8.2/src/lib.rs", Edition2021) }
+   0.216485958s  INFO prepare_target{force=false package_id=spl-transfer-hook-interface v0.8.2 target="spl_transfer_hook_interface"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-transfer-hook-interface-15e4d4b850af804d/lib-spl_transfer_hook_interface`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.217243833s  INFO prepare_target{force=false package_id=spl-discriminator v0.3.0 target="spl_discriminator"}: cargo::core::compiler::fingerprint: fingerprint error for spl-discriminator v0.3.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("spl_discriminator", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-discriminator-0.3.0/src/lib.rs", Edition2021) }
+   0.217249542s  INFO prepare_target{force=false package_id=spl-discriminator v0.3.0 target="spl_discriminator"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-discriminator-c204aff0e4958e0a/lib-spl_discriminator`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.217678625s  INFO prepare_target{force=false package_id=spl-pod v0.4.0 target="spl_pod"}: cargo::core::compiler::fingerprint: fingerprint error for spl-pod v0.4.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("spl_pod", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-pod-0.4.0/src/lib.rs", Edition2021) }
+   0.217683958s  INFO prepare_target{force=false package_id=spl-pod v0.4.0 target="spl_pod"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-pod-ae946d79ff1ace7c/lib-spl_pod`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.218135583s  INFO prepare_target{force=false package_id=spl-program-error v0.5.0 target="spl_program_error"}: cargo::core::compiler::fingerprint: fingerprint error for spl-program-error v0.5.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("spl_program_error", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-program-error-0.5.0/src/lib.rs", Edition2021) }
+   0.218139333s  INFO prepare_target{force=false package_id=spl-program-error v0.5.0 target="spl_program_error"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-program-error-71dea34cc844bcb8/lib-spl_program_error`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.218529917s  INFO prepare_target{force=false package_id=spl-tlv-account-resolution v0.8.1 target="spl_tlv_account_resolution"}: cargo::core::compiler::fingerprint: fingerprint error for spl-tlv-account-resolution v0.8.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("spl_tlv_account_resolution", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-tlv-account-resolution-0.8.1/src/lib.rs", Edition2021) }
+   0.218533292s  INFO prepare_target{force=false package_id=spl-tlv-account-resolution v0.8.1 target="spl_tlv_account_resolution"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-tlv-account-resolution-697c635872449784/lib-spl_tlv_account_resolution`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   0.218985458s  INFO prepare_target{force=false package_id=spl-type-length-value v0.6.0 target="spl_type_length_value"}: cargo::core::compiler::fingerprint: fingerprint error for spl-type-length-value v0.6.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("spl_type_length_value", ["cdylib", "lib"], "/Users/satwikghildiyal/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-type-length-value-0.6.0/src/lib.rs", Edition2021) }
+   0.218989083s  INFO prepare_target{force=false package_id=spl-type-length-value v0.6.0 target="spl_type_length_value"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/spl-type-length-value-9eeb80bbfa1f341f/lib-spl_type_length_value`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: std::rt::lang_start_internal
+  19: _main
+   0.219585417s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint: fingerprint error for vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager)/Check { test: true }/TargetInner { ..: lib_target("vault_manager", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs", Edition2021) }
+   0.219590792s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/vault_manager-9dc893351faee3c9/test-lib-vault_manager`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking solana-slot-hashes v2.2.1 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v2)
+    Checking solana-slot-hashes v3.0.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/patches/solana-slot-hashes-v3)
+    Checking solana-address-lookup-table-interface v2.2.2
+    Checking solana-sysvar v2.3.0
+    Checking solana-sysvar v3.1.0
+    Checking solana-example-mocks v2.2.1
+    Checking spl-associated-token-account v8.0.0
+    Checking spl-token-2022 v10.0.0
+    Checking solana-program v2.3.0
+    Checking spl-program-error v0.6.0
+    Checking spl-token-confidential-transfer-proof-extraction v0.2.1
+    Checking spl-token v7.0.0
+    Checking spl-program-error v0.5.0
+    Checking anchor-lang v0.31.1
+    Checking spl-discriminator v0.3.0
+    Checking spl-pod v0.4.0
+    Checking spl-tlv-account-resolution v0.9.0
+    Checking spl-elgamal-registry v0.1.1
+    Checking spl-type-length-value v0.6.0
+    Checking spl-transfer-hook-interface v0.9.0
+    Checking spl-tlv-account-resolution v0.8.1
+    Checking spl-token-2022 v6.0.0
+    Checking spl-transfer-hook-interface v0.8.2
+    Checking spl-associated-token-account v6.0.0
+    Checking anchor-spl v0.31.1
+    Checking lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook)
     Checking vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.24s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.42s

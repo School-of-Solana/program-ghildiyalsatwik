@@ -48,9 +48,6 @@ pub mod lvsol_transfer_hook {
         Ok(())
     }
 
-    pub fn init(_ctx: Context<Init>) -> Result<()> {
-        Ok(())
-    }
 }
 
 
@@ -71,9 +68,6 @@ pub struct Execute<'info> {
     pub token_program: Interface<'info, TokenInterface>,
     pub system_program: Program<'info, System>,
 }
-
-#[derive(Accounts)]
-pub struct Init {}
 
 #[error_code]
 pub enum TransferError {

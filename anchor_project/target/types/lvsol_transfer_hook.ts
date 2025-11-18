@@ -48,21 +48,6 @@ export type LvsolTransferHook = {
         }
       ],
       "args": []
-    },
-    {
-      "name": "init",
-      "discriminator": [
-        220,
-        59,
-        207,
-        236,
-        108,
-        250,
-        47,
-        100
-      ],
-      "accounts": [],
-      "args": []
     }
   ],
   "errors": [

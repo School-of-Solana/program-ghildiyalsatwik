@@ -12,3 +12,7 @@ resolver = "2"
 
 [profile.release]
 overflow-checks = true
+
+[replace]
+"solana-slot-hashes:3.0.0" = { path = "patches/solana-slot-hashes-v3" }
+"solana-slot-hashes:2.2.1" = { path = "patches/solana-slot-hashes-v2" }

@@ -458,9 +458,9 @@ export type VaultManager = {
           "writable": true
         },
         {
-          "name": "vaultLvsolAccount",
+          "name": "ownerLvsolAccount",
           "docs": [
-            "Token account of the vault PDA (to burn from)"
+            "Owner's lvSOL account (delegated to the vault PDA)"
           ],
           "writable": true
         },
@@ -559,6 +559,11 @@ export type VaultManager = {
       "code": 6002,
       "name": "lamportTransferFailed",
       "msg": "Lamport transfer failed."
+    },
+    {
+      "code": 6003,
+      "name": "missingDelegate",
+      "msg": "Vault PDA must be approved as delegate over owner's lvSOL."
     }
   ],
   "types": [

@@ -3,8 +3,8 @@ use anchor_lang::system_program;
 use anchor_spl::token_interface::{
     TokenAccount, Mint, TokenInterface, Burn, burn
 };
-use crate::state::vault_state::{VaultState, InheritorShare};
-use anchor_lang::solana_program::{self, system_instruction};
+use crate::state::vault_state::VaultState;
+use anchor_lang::solana_program::{system_instruction, program_option::COption};
 
 #[derive(Accounts)]
 pub struct TriggerInheritance<'info> {
@@ -34,12 +34,13 @@ pub struct TriggerInheritance<'info> {
     )]
     pub lvsol_mint: InterfaceAccount<'info, Mint>,
 
-    /// Token account of the vault PDA (to burn from)
+    /// Owner's lvSOL account (delegated to the vault PDA)
     #[account(
         mut,
-        constraint = vault_lvsol_account.mint == lvsol_mint.key()
+        constraint = owner_lvsol_account.mint == lvsol_mint.key(),
+        constraint = owner_lvsol_account.owner == vault_state.owner
     )]
-    pub vault_lvsol_account: InterfaceAccount<'info, TokenAccount>,
+    pub owner_lvsol_account: InterfaceAccount<'info, TokenAccount>,
 
     pub token_program: Interface<'info, TokenInterface>,
     pub system_program: Program<'info, System>,
@@ -57,14 +58,28 @@ pub fn handler(ctx: Context<TriggerInheritance>) -> Result<()> {
         ErrorCode::VaultStillActive
     );
 
-    // 2️⃣ Burn the lvSOL tokens (from vault PDA)
-    let burn_ctx = CpiContext::new(
+    // Ensure delegate is configured
+    require!(
+        ctx.accounts.owner_lvsol_account.delegate == COption::Some(ctx.accounts.vault_pda.key()),
+        ErrorCode::MissingDelegate
+    );
+
+    // 2️⃣ Burn the lvSOL tokens (from owner's account via delegate)
+    let vault_bump = &[vault_state.vault_pda_bump];
+    let signer_seeds: &[&[u8]] = &[
+        b"vault-sol",
+        vault_state.owner.as_ref(),
+        vault_bump,
+    ];
+    let signer = &[signer_seeds];
+    let burn_ctx = CpiContext::new_with_signer(
         ctx.accounts.token_program.to_account_info(),
         Burn {
             mint: ctx.accounts.lvsol_mint.to_account_info(),
-            from: ctx.accounts.vault_lvsol_account.to_account_info(),
+            from: ctx.accounts.owner_lvsol_account.to_account_info(),
             authority: ctx.accounts.vault_pda.to_account_info(),
         },
+        signer,
     );
 
     burn(burn_ctx, vault_state.locked_amount)?;
@@ -99,6 +114,9 @@ pub fn handler(ctx: Context<TriggerInheritance>) -> Result<()> {
         )?;
     }
 
+    // Update vault bookkeeping
+    vault_state.locked_amount = 0;
+
     // 4️⃣ Emit event
     emit!(InheritanceTriggered {
         owner: vault_state.owner,
@@ -124,4 +142,6 @@ pub enum ErrorCode {
     UnauthorizedUser,
     #[msg("Lamport transfer failed.")]
     LamportTransferFailed,
+    #[msg("Vault PDA must be approved as delegate over owner's lvSOL.")]
+    MissingDelegate,
 }

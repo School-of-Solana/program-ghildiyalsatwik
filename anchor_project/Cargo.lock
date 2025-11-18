@@ -902,8 +902,6 @@ version = "0.1.0"
 dependencies = [
  "anchor-lang",
  "anchor-spl",
- "spl-token-2022 10.0.0",
- "spl-transfer-hook-interface 0.8.2",
 ]
 
 [[package]]
@@ -1441,7 +1439,7 @@ dependencies = [
  "solana-instruction 2.3.3",
  "solana-pubkey 2.4.0",
  "solana-sdk-ids 2.2.1",
- "solana-slot-hashes 2.2.1",
+ "solana-slot-hashes 2.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -2093,7 +2091,7 @@ dependencies = [
  "solana-serialize-utils 2.2.1",
  "solana-sha256-hasher 2.3.0",
  "solana-short-vec",
- "solana-slot-hashes 2.2.1",
+ "solana-slot-hashes 2.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "solana-slot-history 2.2.1",
  "solana-stable-layout 2.2.1",
  "solana-stake-interface",
@@ -2490,8 +2488,6 @@ dependencies = [
 [[package]]
 name = "solana-slot-hashes"
 version = "2.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0c8691982114513763e88d04094c9caa0376b867a29577939011331134c301ce"
 dependencies = [
  "serde",
  "serde_derive",
@@ -2502,9 +2498,14 @@ dependencies = [
 
 [[package]]
 name = "solana-slot-hashes"
-version = "3.0.0"
+version = "2.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "80a293f952293281443c04f4d96afd9d547721923d596e92b4377ed2360f1746"
+checksum = "0c8691982114513763e88d04094c9caa0376b867a29577939011331134c301ce"
+replace = "solana-slot-hashes 2.2.1"
+
+[[package]]
+name = "solana-slot-hashes"
+version = "3.0.0"
 dependencies = [
  "serde",
  "serde_derive",
@@ -2512,6 +2513,13 @@ dependencies = [
  "solana-sdk-ids 3.1.0",
  "solana-sysvar-id 3.1.0",
 ]
+
+[[package]]
+name = "solana-slot-hashes"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "80a293f952293281443c04f4d96afd9d547721923d596e92b4377ed2360f1746"
+replace = "solana-slot-hashes 3.0.0"
 
 [[package]]
 name = "solana-slot-history"
@@ -2642,7 +2650,7 @@ dependencies = [
  "solana-sanitize 2.2.1",
  "solana-sdk-ids 2.2.1",
  "solana-sdk-macro 2.2.1",
- "solana-slot-hashes 2.2.1",
+ "solana-slot-hashes 2.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "solana-slot-history 2.2.1",
  "solana-stake-interface",
  "solana-sysvar-id 2.2.1",
@@ -2675,7 +2683,7 @@ dependencies = [
  "solana-rent 3.0.0",
  "solana-sdk-ids 3.1.0",
  "solana-sdk-macro 3.0.0",
- "solana-slot-hashes 3.0.0",
+ "solana-slot-hashes 3.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "solana-slot-history 3.0.0",
  "solana-sysvar-id 3.1.0",
 ]

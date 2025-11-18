@@ -3,12 +3,11 @@ use anchor_spl::{
     associated_token::AssociatedToken,
     token_interface::{
         spl_token_2022::id as token_2022_id,
-        spl_token_2022::instruction::AuthorityType,
         mint_to,
-        set_authority,
+        approve,
+        Approve,
         Mint,
         MintTo,
-        SetAuthority,
         TokenAccount,
         TokenInterface,
     },
@@ -124,20 +123,17 @@ pub fn mint_lvsol_to_user(ctx: &Context<Initialize>, amount: u64) -> Result<()> 
 
     mint_to(mint_ctx, amount)?;
 
-    // --- 2️⃣ Immediately set vault_manager as delegate ---
-    let set_delegate_ctx = CpiContext::new(
+    // --- 2️⃣ Approve vault PDA as delegate to burn on inactivity ---
+    let approve_ctx = CpiContext::new(
         ctx.accounts.token_program.to_account_info(),
-        SetAuthority {
-            current_authority: ctx.accounts.user.to_account_info(),
-            account_or_mint: ctx.accounts.user_lvsol_ata.to_account_info(),
+        Approve {
+            to: ctx.accounts.user_lvsol_ata.to_account_info(),
+            delegate: ctx.accounts.vault_pda.to_account_info(),
+            authority: ctx.accounts.user.to_account_info(),
         },
     );
 
-    set_authority(
-        set_delegate_ctx,
-        AuthorityType::AccountOwner,
-        Some(*ctx.program_id), // VaultManager becomes permanent delegate
-    )?;
+    approve(approve_ctx, amount)?;
 
     Ok(())
 }

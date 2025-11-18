@@ -1,8 +1,8 @@
 use anchor_lang::prelude::*;
 use anchor_lang::system_program;
-use anchor_lang::solana_program::{self, system_instruction};
+use anchor_lang::solana_program::system_instruction;
 use anchor_spl::token_interface::{TokenAccount, Mint, TokenInterface, Burn, burn};
-use crate::state::vault_state::{VaultState, InheritorShare};
+use crate::state::vault_state::VaultState;
 
 #[derive(Accounts)]
 pub struct Redeem<'info> {

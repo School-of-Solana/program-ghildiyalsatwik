@@ -452,9 +452,9 @@
           "writable": true
         },
         {
-          "name": "vault_lvsol_account",
+          "name": "owner_lvsol_account",
           "docs": [
-            "Token account of the vault PDA (to burn from)"
+            "Owner's lvSOL account (delegated to the vault PDA)"
           ],
           "writable": true
         },
@@ -553,6 +553,11 @@
       "code": 6002,
       "name": "LamportTransferFailed",
       "msg": "Lamport transfer failed."
+    },
+    {
+      "code": 6003,
+      "name": "MissingDelegate",
+      "msg": "Vault PDA must be approved as delegate over owner's lvSOL."
     }
   ],
   "types": [
