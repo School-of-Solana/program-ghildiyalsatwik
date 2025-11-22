@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import * as anchor from "@coral-xyz/anchor";
-import { Connection, PublicKey } from "@solana/web3.js";
+import { Connection, PublicKey, SendTransactionError } from "@solana/web3.js";
 import rawIdl from "./idl/vault_manager.json";
 import {
   ASSOCIATED_TOKEN_PROGRAM_ID,
@@ -192,12 +192,24 @@ function App() {
   const walletAdapter = useMemo<anchor.Wallet | null>(() => {
     if (!walletKey || !window.solana) return null;
     const provider = window.solana;
-    return {
+    const wallet = {
       publicKey: walletKey,
-      signTransaction: (tx: anchor.web3.Transaction) => provider.signTransaction(tx),
-      signAllTransactions: (txs: anchor.web3.Transaction[]) =>
-        provider.signAllTransactions(txs)
+      async signTransaction<T extends anchor.web3.Transaction | anchor.web3.VersionedTransaction>(
+        tx: T
+      ) {
+        const signed = await provider.signTransaction(tx as anchor.web3.Transaction);
+        return signed as T;
+      },
+      async signAllTransactions<
+        T extends anchor.web3.Transaction | anchor.web3.VersionedTransaction
+      >(txs: T[]) {
+        const signed = await provider.signAllTransactions(
+          txs as anchor.web3.Transaction[]
+        );
+        return signed as T[];
+      }
     };
+    return wallet as anchor.Wallet;
   }, [walletKey]);
 
   const anchorProvider = useMemo(() => {
@@ -209,7 +221,7 @@ function App() {
 
   const program = useMemo(() => {
     if (!anchorProvider) return null;
-    return new anchor.Program(patchedIdl, PROGRAM_ID, anchorProvider);
+    return new anchor.Program(patchedIdl, anchorProvider);
   }, [anchorProvider]);
 
   const connectWallet = useCallback(async () => {
@@ -263,6 +275,18 @@ function App() {
       setTxSignature(sig);
     } catch (error) {
       console.error(error);
+      if (error instanceof SendTransactionError) {
+        try {
+          const logs = await error.getLogs(connection);
+          if (logs?.length) {
+            console.error("Transaction logs:", logs);
+            setStatus(`Error: ${logs.join("\n")}`);
+            return;
+          }
+        } catch (logError) {
+          console.error("Failed to fetch transaction logs", logError);
+        }
+      }
       const message = error instanceof Error ? error.message : String(error);
       setStatus(`Error: ${message}`);
     }

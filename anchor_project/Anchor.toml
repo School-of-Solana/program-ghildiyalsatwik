@@ -2,8 +2,12 @@
 vault_manager = "C6KnmAotGiA1B9ii2mWz4PB1iujSjXcZfB5z78mgg11b"
 lvsol_transfer_hook = "tDGxsLSWHUQ678asjwp1UTdtPq5VFw9NNFDskxcsBdR"
 
+[programs.devnet]
+vault_manager = "7EiDfRtq73qnkWNaa8LddtDWcJcW2XPbjFbTzX5EArtm"
+lvsol_transfer_hook = "2qT1ykhHkH7XFZVGBgnNVMGcmciZ2bbrwVfSqdrGjUNT"
+
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [features]
