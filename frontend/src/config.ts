@@ -5,6 +5,10 @@ export const PROGRAM_ID = new PublicKey("C6KnmAotGiA1B9ii2mWz4PB1iujSjXcZfB5z78m
 export const TOKEN_2022_PROGRAM_ID = new PublicKey(
   "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
 );
+// Token-2022 transfer hook program used by the tests and front-end mint helper
+export const TRANSFER_HOOK_PROGRAM_ID = new PublicKey(
+  "tDGxsLSWHUQ678asjwp1UTdtPq5VFw9NNFDskxcsBdR"
+);
 export const ASSOCIATED_TOKEN_PROGRAM_ID = new PublicKey(
   "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
 );

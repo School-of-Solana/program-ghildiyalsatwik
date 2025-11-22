@@ -7,7 +7,8 @@ import {
   DEFAULT_LVSOL_MINT,
   PROGRAM_ID,
   RPC_ENDPOINT,
-  TOKEN_2022_PROGRAM_ID
+  TOKEN_2022_PROGRAM_ID,
+  TRANSFER_HOOK_PROGRAM_ID
 } from "./config";
 
 const LAMPORTS_PER_SOL = anchor.web3.LAMPORTS_PER_SOL;
@@ -51,6 +52,112 @@ const getAta = (owner: PublicKey, mint: PublicKey) => {
     [owner.toBuffer(), TOKEN_2022_PROGRAM_ID.toBuffer(), mint.toBuffer()],
     ASSOCIATED_TOKEN_PROGRAM_ID
   )[0];
+};
+
+// Token-2022 + Transfer Hook setup (mirrors tests)
+const BASE_MINT_SIZE = 82;
+const TRANSFER_HOOK_MINT_SIZE = BASE_MINT_SIZE + 83 + 1 + 2 + 2 + 64;
+const TOKEN_INSTRUCTION_TRANSFER_HOOK = 36;
+const TRANSFER_HOOK_INSTRUCTION_INITIALIZE = 0;
+const MINT_DECIMALS = 9;
+
+const createInitializeMintInstruction = (
+  mint: PublicKey,
+  decimals: number,
+  mintAuthority: PublicKey,
+  freezeAuthority: PublicKey | null
+) => {
+  const data = Buffer.alloc(1 + 1 + 32 + 1 + (freezeAuthority ? 32 : 0));
+  data[0] = 0; // InitializeMint instruction
+  data[1] = decimals;
+  mintAuthority.toBuffer().copy(data, 2);
+  if (freezeAuthority) {
+    data[34] = 1;
+    freezeAuthority.toBuffer().copy(data, 35);
+  } else {
+    data[34] = 0;
+  }
+
+  return new anchor.web3.TransactionInstruction({
+    programId: TOKEN_2022_PROGRAM_ID,
+    keys: [
+      { pubkey: mint, isSigner: false, isWritable: true },
+      { pubkey: anchor.web3.SYSVAR_RENT_PUBKEY, isSigner: false, isWritable: false }
+    ],
+    data
+  });
+};
+
+const createInitializeTransferHookInstruction = (
+  mint: PublicKey,
+  authority: PublicKey,
+  transferHookProgramId: PublicKey
+) => {
+  const data = Buffer.alloc(1 + 1 + 32 + 32);
+  data[0] = TOKEN_INSTRUCTION_TRANSFER_HOOK;
+  data[1] = TRANSFER_HOOK_INSTRUCTION_INITIALIZE;
+  authority.toBuffer().copy(data, 2);
+  transferHookProgramId.toBuffer().copy(data, 34);
+
+  return new anchor.web3.TransactionInstruction({
+    programId: TOKEN_2022_PROGRAM_ID,
+    keys: [{ pubkey: mint, isSigner: false, isWritable: true }],
+    data
+  });
+};
+
+const createToken2022MintWithTransferHook = async ({
+  mintAuthority,
+  transferHookProgramId,
+  walletAdapter
+}: {
+  mintAuthority: PublicKey;
+  transferHookProgramId: PublicKey;
+  walletAdapter: anchor.Wallet;
+}) => {
+  if (!walletAdapter.publicKey || !walletAdapter.signTransaction) {
+    throw new Error("Connect your wallet to create the mint.");
+  }
+
+  const mintKeypair = anchor.web3.Keypair.generate();
+  const lamports = await connection.getMinimumBalanceForRentExemption(
+    TRANSFER_HOOK_MINT_SIZE
+  );
+
+  const tx = new anchor.web3.Transaction().add(
+    anchor.web3.SystemProgram.createAccount({
+      fromPubkey: walletAdapter.publicKey,
+      newAccountPubkey: mintKeypair.publicKey,
+      space: TRANSFER_HOOK_MINT_SIZE,
+      lamports,
+      programId: TOKEN_2022_PROGRAM_ID
+    }),
+    createInitializeTransferHookInstruction(
+      mintKeypair.publicKey,
+      mintAuthority,
+      transferHookProgramId
+    ),
+    createInitializeMintInstruction(
+      mintKeypair.publicKey,
+      MINT_DECIMALS,
+      mintAuthority,
+      null
+    )
+  );
+
+  const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash();
+  tx.feePayer = walletAdapter.publicKey;
+  tx.recentBlockhash = blockhash;
+  tx.partialSign(mintKeypair);
+
+  const signedTx = await walletAdapter.signTransaction(tx);
+  const signature = await connection.sendRawTransaction(signedTx.serialize());
+  await connection.confirmTransaction(
+    { signature, blockhash, lastValidBlockHeight },
+    "confirmed"
+  );
+
+  return { mint: mintKeypair.publicKey, signature };
 };
 
 const explorerUrl = (sig: string) =>
@@ -172,12 +279,27 @@ function App() {
     event.preventDefault();
     await run(async () => {
       const programInstance = ensureProgram();
-      if (!lvsolMintInput) {
-        throw new Error("Provide the lvSOL mint address you deployed on devnet.");
+      if (!anchorProvider || !walletAdapter) {
+        throw new Error("Connect your wallet to continue.");
       }
-      const mint = new PublicKey(lvsolMintInput);
-      const inheritors = parseInheritors();
       const { vaultStatePda, vaultSolPda } = deriveVaultAddresses(walletKey!);
+
+      // Create a fresh Token-2022 mint with transfer hook (or use provided mint if set)
+      let mint: PublicKey;
+      if (lvsolMintInput.trim()) {
+        mint = new PublicKey(lvsolMintInput.trim());
+      } else {
+        const created = await createToken2022MintWithTransferHook({
+          mintAuthority: vaultSolPda,
+          transferHookProgramId: TRANSFER_HOOK_PROGRAM_ID,
+          walletAdapter
+        });
+        mint = created.mint;
+        setLvsolMintInput(mint.toBase58());
+        setTriggerMint(prev => prev || mint.toBase58());
+      }
+
+      const inheritors = parseInheritors();
       const userAta = getAta(walletKey!, mint);
       return programInstance.methods
         .initialize(
@@ -311,8 +433,7 @@ function App() {
               type="text"
               value={lvsolMintInput}
               onChange={event => setLvsolMintInput(event.target.value)}
-              placeholder="Enter the lvSOL mint address"
-              required
+              placeholder="Leave blank to auto-create a mint"
             />
           </label>
           <div className="form-grid">
