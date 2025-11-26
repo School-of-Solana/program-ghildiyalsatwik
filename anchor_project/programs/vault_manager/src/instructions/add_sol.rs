@@ -1,5 +1,6 @@
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::system_instruction;
+use crate::state::vault_state::VAULT_SOL_SEED;
 
 /// User adds more SOL into an already initialized vault.
 #[derive(Accounts)]
@@ -13,7 +14,7 @@ pub struct AddSol<'info> {
     /// so treating it as unchecked is safe.
     #[account(
         mut,
-        seeds = [b"vault-sol", user.key().as_ref()],
+        seeds = [VAULT_SOL_SEED, user.key().as_ref()],
         bump,
         owner = system_program.key(),
     )]

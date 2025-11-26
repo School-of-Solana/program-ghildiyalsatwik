@@ -1,5 +1,5 @@
 use anchor_lang::prelude::*;
-use crate::state::vault_state::VaultState;
+use crate::state::vault_state::{VaultState, VAULT_STATE_SEED};
 
 #[derive(Accounts)]
 pub struct Ping<'info> {
@@ -9,7 +9,7 @@ pub struct Ping<'info> {
     #[account(
         mut,
         has_one = owner @ ErrorCode::UnauthorizedUser,
-        seeds = [b"vault", owner.key().as_ref()],
+        seeds = [VAULT_STATE_SEED, owner.key().as_ref()],
         bump
     )]
     pub vault_state: Account<'info, VaultState>,

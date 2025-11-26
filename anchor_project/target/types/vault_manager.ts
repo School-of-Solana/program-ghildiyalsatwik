@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/vault_manager.json`.
  */
 export type VaultManager = {
-  "address": "C6KnmAotGiA1B9ii2mWz4PB1iujSjXcZfB5z78mgg11b",
+  "address": "CLA15YrbmHPb6tgtRkd9xtR9uuZPWkbb4E38fWpNwLbR",
   "metadata": {
     "name": "vaultManager",
     "version": "0.1.0",
@@ -53,7 +53,10 @@ export type VaultManager = {
                   45,
                   115,
                   111,
-                  108
+                  108,
+                  45,
+                  118,
+                  50
                 ]
               },
               {
@@ -105,7 +108,10 @@ export type VaultManager = {
                   97,
                   117,
                   108,
-                  116
+                  116,
+                  45,
+                  118,
+                  50
                 ]
               },
               {
@@ -131,7 +137,10 @@ export type VaultManager = {
                   45,
                   115,
                   111,
-                  108
+                  108,
+                  45,
+                  118,
+                  50
                 ]
               },
               {
@@ -278,7 +287,10 @@ export type VaultManager = {
                   97,
                   117,
                   108,
-                  116
+                  116,
+                  45,
+                  118,
+                  50
                 ]
               },
               {
@@ -321,7 +333,10 @@ export type VaultManager = {
                   97,
                   117,
                   108,
-                  116
+                  116,
+                  45,
+                  118,
+                  50
                 ]
               },
               {
@@ -348,7 +363,10 @@ export type VaultManager = {
                   45,
                   115,
                   111,
-                  108
+                  108,
+                  45,
+                  118,
+                  50
                 ]
               },
               {
@@ -670,6 +688,10 @@ export type VaultManager = {
           },
           {
             "name": "vaultPdaBump",
+            "type": "u8"
+          },
+          {
+            "name": "vaultStateBump",
             "type": "u8"
           },
           {

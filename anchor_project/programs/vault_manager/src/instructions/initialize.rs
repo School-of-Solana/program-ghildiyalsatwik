@@ -12,7 +12,7 @@ use anchor_spl::{
         TokenInterface,
     },
 };
-use crate::state::vault_state::{InheritorShare, VaultState};
+use crate::state::vault_state::{InheritorShare, VaultState, VAULT_SOL_SEED, VAULT_STATE_SEED};
 
 #[derive(Accounts)]
 pub struct Initialize<'info> {
@@ -22,8 +22,8 @@ pub struct Initialize<'info> {
     #[account(
         init,
         payer = user,
-        space = 8 + std::mem::size_of::<VaultState>(),
-        seeds = [b"vault", user.key().as_ref()],
+        space = 8 + VaultState::space_for_inheritors(VaultState::MAX_INHERITORS),
+        seeds = [VAULT_STATE_SEED, user.key().as_ref()],
         bump
     )]
     pub vault_state: Account<'info, VaultState>,
@@ -32,7 +32,7 @@ pub struct Initialize<'info> {
     #[account(
         init,
         payer = user,
-        seeds = [b"vault-sol", user.key().as_ref()],
+        seeds = [VAULT_SOL_SEED, user.key().as_ref()],
         bump,
         space = 0,
         owner = system_program.key(),
@@ -68,6 +68,11 @@ pub fn handler(
     inactivity_duration: i64,
     inheritors: Vec<InheritorShare>,
 ) -> Result<()> {
+    require!(
+        inheritors.len() <= VaultState::MAX_INHERITORS,
+        ErrorCode::TooManyInheritors
+    );
+
     let user = &ctx.accounts.user;
     let vault_pda = &ctx.accounts.vault_pda;
 
@@ -96,6 +101,7 @@ pub fn handler(
     vault_state.inheritors = inheritors;
     vault_state.lvsol_mint = ctx.accounts.lvsol_mint.key();
     vault_state.vault_pda_bump = ctx.bumps.vault_pda;
+    vault_state.vault_state_bump = ctx.bumps.vault_state;
 
     Ok(())
 }
@@ -105,7 +111,7 @@ pub fn mint_lvsol_to_user(ctx: &Context<Initialize>, amount: u64) -> Result<()> 
     // --- 1️⃣ Mint tokens to user's lvSOL ATA ---
     let user_key = ctx.accounts.user.key();
     let seeds = &[
-        b"vault-sol",
+        VAULT_SOL_SEED,
         user_key.as_ref(),
         &[ctx.bumps.vault_pda],
     ];
@@ -136,4 +142,10 @@ pub fn mint_lvsol_to_user(ctx: &Context<Initialize>, amount: u64) -> Result<()> 
     approve(approve_ctx, amount)?;
 
     Ok(())
+}
+
+#[error_code]
+pub enum ErrorCode {
+    #[msg("Too many inheritors; reduce the list or increase MAX_INHERITORS.")]
+    TooManyInheritors,
 }

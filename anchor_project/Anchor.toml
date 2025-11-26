@@ -3,7 +3,7 @@ vault_manager = "C6KnmAotGiA1B9ii2mWz4PB1iujSjXcZfB5z78mgg11b"
 lvsol_transfer_hook = "tDGxsLSWHUQ678asjwp1UTdtPq5VFw9NNFDskxcsBdR"
 
 [programs.devnet]
-vault_manager = "7EiDfRtq73qnkWNaa8LddtDWcJcW2XPbjFbTzX5EArtm"
+vault_manager = "CLA15YrbmHPb6tgtRkd9xtR9uuZPWkbb4E38fWpNwLbR"
 lvsol_transfer_hook = "2qT1ykhHkH7XFZVGBgnNVMGcmciZ2bbrwVfSqdrGjUNT"
 
 [provider]

@@ -5,7 +5,7 @@ use anchor_spl::token_interface::{set_authority, Mint, SetAuthority, TokenAccoun
 use anchor_spl::token_interface::spl_token_2022::instruction::AuthorityType;
 
 
-declare_id!("tDGxsLSWHUQ678asjwp1UTdtPq5VFw9NNFDskxcsBdR"); // replace with your real program ID
+declare_id!("2qT1ykhHkH7XFZVGBgnNVMGcmciZ2bbrwVfSqdrGjUNT");
 
 #[program]
 pub mod lvsol_transfer_hook {

@@ -2,7 +2,7 @@ use anchor_lang::prelude::*;
 use anchor_lang::system_program;
 use anchor_lang::solana_program::system_instruction;
 use anchor_spl::token_interface::{TokenAccount, Mint, TokenInterface, Burn, burn};
-use crate::state::vault_state::VaultState;
+use crate::state::vault_state::{VaultState, VAULT_SOL_SEED, VAULT_STATE_SEED};
 
 #[derive(Accounts)]
 pub struct Redeem<'info> {
@@ -11,15 +11,15 @@ pub struct Redeem<'info> {
 
     #[account(
         mut,
-        seeds = [b"vault", vault_state.owner.as_ref()],
-        bump = vault_state.vault_pda_bump
+        seeds = [VAULT_STATE_SEED, vault_state.owner.as_ref()],
+        bump = vault_state.vault_state_bump
     )]
     pub vault_state: Account<'info, VaultState>,
 
     /// CHECK: PDA that holds SOL for this vault
     #[account(
         mut,
-        seeds = [b"vault-sol", vault_state.owner.as_ref()],
+        seeds = [VAULT_SOL_SEED, vault_state.owner.as_ref()],
         bump,
         owner = system_program::ID
     )]
@@ -69,7 +69,7 @@ pub fn handler(ctx: Context<Redeem>, redeem_amount: u64) -> Result<()> {
             ctx.accounts.vault_pda.to_account_info(),
             ctx.accounts.redeemer.to_account_info(),
         ],
-        &[&[b"vault-sol", vault_state.owner.as_ref(), &[vault_state.vault_pda_bump]]],
+        &[&[VAULT_SOL_SEED, vault_state.owner.as_ref(), &[vault_state.vault_pda_bump]]],
     )?;
 
     // 🧮 Update vault state
@@ -97,7 +97,7 @@ pub fn handler(ctx: Context<Redeem>, redeem_amount: u64) -> Result<()> {
                         ctx.accounts.vault_pda.to_account_info(),
                         ctx.accounts.system_program.to_account_info(),
                     ],
-                    &[&[b"vault-sol", vault_state.owner.as_ref(), &[vault_state.vault_pda_bump]]],
+                    &[&[VAULT_SOL_SEED, vault_state.owner.as_ref(), &[vault_state.vault_pda_bump]]],
                 )?;
             }
         }

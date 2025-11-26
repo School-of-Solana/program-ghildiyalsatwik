@@ -2,53 +2,15 @@ warning: virtual workspace defaulting to `resolver = "1"` despite one or more wo
 note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
 note: to use the edition 2021 resolver, specify `workspace.resolver = "2"` in the workspace root's manifest
 note: for more details see https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
-   0.117647375s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint: fingerprint error for vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager)/Check { test: false }/TargetInner { ..: lib_target("vault_manager", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs", Edition2021) }
-   0.117662834s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/vault_manager-7a00fd653ae4226b/lib-vault_manager`
-
-Caused by:
-    No such file or directory (os error 2)
-
-Stack backtrace:
-   0: std::backtrace::Backtrace::create
-   1: cargo_util::paths::read_bytes
-   2: cargo_util::paths::read
-   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
-   4: cargo::core::compiler::fingerprint::prepare_target
-   5: cargo::core::compiler::compile
-   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
-   7: cargo::ops::cargo_compile::compile_ws
-   8: cargo::ops::cargo_compile::compile_with_exec
-   9: cargo::ops::cargo_compile::compile
-  10: cargo::commands::check::exec
-  11: <cargo::cli::Exec>::exec
-  12: cargo::main
-  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
-  14: std::rt::lang_start::<()>::{closure#0}
-  15: std::rt::lang_start_internal
-  16: _main
-   0.122745084s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint: fingerprint error for vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager)/Check { test: true }/TargetInner { ..: lib_target("vault_manager", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager/src/lib.rs", Edition2021) }
-   0.122751459s  INFO prepare_target{force=false package_id=vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager) target="vault_manager"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/vault_manager-065eb5b4fb68667d/test-lib-vault_manager`
-
-Caused by:
-    No such file or directory (os error 2)
-
-Stack backtrace:
-   0: std::backtrace::Backtrace::create
-   1: cargo_util::paths::read_bytes
-   2: cargo_util::paths::read
-   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
-   4: cargo::core::compiler::fingerprint::prepare_target
-   5: cargo::core::compiler::compile
-   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
-   7: cargo::ops::cargo_compile::compile_ws
-   8: cargo::ops::cargo_compile::compile_with_exec
-   9: cargo::ops::cargo_compile::compile
-  10: cargo::commands::check::exec
-  11: <cargo::cli::Exec>::exec
-  12: cargo::main
-  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
-  14: std::rt::lang_start::<()>::{closure#0}
-  15: std::rt::lang_start_internal
-  16: _main
-    Checking vault_manager v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/vault_manager)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.42s
+   0.107131708s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint: stale: changed "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs"
+   0.107160708s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint:           (vs) "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/lvsol_transfer_hook-7ccfac159cacf90f/dep-lib-lvsol_transfer_hook"
+   0.107163666s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1764181401, nanos: 739454917 } < FileTime { seconds: 1764181423, nanos: 18752086 }
+   0.107328875s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint: fingerprint dirty for lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("lvsol_transfer_hook", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs", Edition2021) }
+   0.107339125s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/lvsol_transfer_hook-7ccfac159cacf90f/dep-lib-lvsol_transfer_hook", reference_mtime: FileTime { seconds: 1764181401, nanos: 739454917 }, stale: "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs", stale_mtime: FileTime { seconds: 1764181423, nanos: 18752086 } }))
+   0.119274125s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint: stale: changed "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs"
+   0.119280958s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint:           (vs) "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/lvsol_transfer_hook-9191a9b8221ed5a3/dep-test-lib-lvsol_transfer_hook"
+   0.119282583s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1764181401, nanos: 739528542 } < FileTime { seconds: 1764181423, nanos: 18752086 }
+   0.119318416s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint: fingerprint dirty for lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("lvsol_transfer_hook", ["cdylib", "lib"], "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs", Edition2021) }
+   0.119325083s  INFO prepare_target{force=false package_id=lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook) target="lvsol_transfer_hook"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/target/debug/.fingerprint/lvsol_transfer_hook-9191a9b8221ed5a3/dep-test-lib-lvsol_transfer_hook", reference_mtime: FileTime { seconds: 1764181401, nanos: 739528542 }, stale: "/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook/src/lib.rs", stale_mtime: FileTime { seconds: 1764181423, nanos: 18752086 } }))
+    Checking lvsol_transfer_hook v0.1.0 (/Users/satwikghildiyal/Desktop/Projects/program-ghildiyalsatwik/anchor_project/programs/lvsol_transfer_hook)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.25s

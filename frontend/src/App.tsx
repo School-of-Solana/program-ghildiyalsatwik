@@ -18,7 +18,7 @@ const connection = new Connection(RPC_ENDPOINT, "confirmed");
 const baseIdl = rawIdl as anchor.Idl;
 const patchedIdl: anchor.Idl = {
   ...baseIdl,
-  accounts: []
+  address: PROGRAM_ID.toBase58()
 };
 
 const toLamports = (value: number) => {
@@ -35,13 +35,16 @@ const basisPointsFromPercent = (value: number) => {
   return new anchor.BN(Math.round(value * 100));
 };
 
+const VAULT_STATE_SEED = "vault-v2";
+const VAULT_SOL_SEED = "vault-sol-v2";
+
 const deriveVaultAddresses = (owner: PublicKey) => {
   const [vaultStatePda] = PublicKey.findProgramAddressSync(
-    [Buffer.from("vault"), owner.toBuffer()],
+    [Buffer.from(VAULT_STATE_SEED), owner.toBuffer()],
     PROGRAM_ID
   );
   const [vaultSolPda] = PublicKey.findProgramAddressSync(
-    [Buffer.from("vault-sol"), owner.toBuffer()],
+    [Buffer.from(VAULT_SOL_SEED), owner.toBuffer()],
     PROGRAM_ID
   );
   return { vaultStatePda, vaultSolPda };
@@ -275,9 +278,15 @@ function App() {
       setTxSignature(sig);
     } catch (error) {
       console.error(error);
-      if (error instanceof SendTransactionError) {
+      const errorWithLogs =
+        error instanceof SendTransactionError
+          ? error
+          : typeof (error as { getLogs?: unknown })?.getLogs === "function"
+            ? (error as { getLogs: (conn: Connection) => Promise<string[] | null> })
+            : null;
+      if (errorWithLogs) {
         try {
-          const logs = await error.getLogs(connection);
+          const logs = await errorWithLogs.getLogs(connection);
           if (logs?.length) {
             console.error("Transaction logs:", logs);
             setStatus(`Error: ${logs.join("\n")}`);
@@ -409,6 +418,16 @@ function App() {
       const mint = new PublicKey((triggerMint || lvsolMintInput).trim());
       const { vaultSolPda, vaultStatePda } = deriveVaultAddresses(owner);
       const ownerAta = getAta(owner, mint);
+      const vaultState = await (programInstance.account as any).vaultState.fetch(
+        vaultStatePda
+      );
+      const remainingAccounts = (vaultState.inheritors as { address: PublicKey }[]).map(
+        inheritor => ({
+          pubkey: inheritor.address,
+          isWritable: true,
+          isSigner: false
+        })
+      );
       return programInstance.methods
         .triggerInheritance()
         .accounts({
@@ -420,6 +439,7 @@ function App() {
           tokenProgram: TOKEN_2022_PROGRAM_ID,
           systemProgram: anchor.web3.SystemProgram.programId
         })
+        .remainingAccounts(remainingAccounts)
         .rpc();
     });
   };

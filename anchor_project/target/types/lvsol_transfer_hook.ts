@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/lvsol_transfer_hook.json`.
  */
 export type LvsolTransferHook = {
-  "address": "tDGxsLSWHUQ678asjwp1UTdtPq5VFw9NNFDskxcsBdR",
+  "address": "2qT1ykhHkH7XFZVGBgnNVMGcmciZ2bbrwVfSqdrGjUNT",
   "metadata": {
     "name": "lvsolTransferHook",
     "version": "0.1.0",

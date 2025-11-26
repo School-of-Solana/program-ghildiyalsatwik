@@ -23,7 +23,7 @@ pub(crate) mod __client_accounts_redeem {
     pub use crate::instructions::redeem::__client_accounts_redeem::*;
 }
 
-declare_id!("C6KnmAotGiA1B9ii2mWz4PB1iujSjXcZfB5z78mgg11b");
+declare_id!("CLA15YrbmHPb6tgtRkd9xtR9uuZPWkbb4E38fWpNwLbR");
 
 #[program]
 pub mod vault_manager {
