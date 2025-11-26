@@ -35,8 +35,8 @@ const basisPointsFromPercent = (value: number) => {
   return new anchor.BN(Math.round(value * 100));
 };
 
-const VAULT_STATE_SEED = "vault-v2";
-const VAULT_SOL_SEED = "vault-sol-v2";
+const VAULT_STATE_SEED = "vault-v3";
+const VAULT_SOL_SEED = "vault-sol-v3";
 
 const deriveVaultAddresses = (owner: PublicKey) => {
   const [vaultStatePda] = PublicKey.findProgramAddressSync(
@@ -421,6 +421,11 @@ function App() {
       const vaultState = await (programInstance.account as any).vaultState.fetch(
         vaultStatePda
       );
+      console.log(
+        "Triggering inheritance",
+        "inheritors_on_chain=",
+        vaultState.inheritors?.length ?? 0
+      );
       const remainingAccounts = (vaultState.inheritors as { address: PublicKey }[]).map(
         inheritor => ({
           pubkey: inheritor.address,
@@ -428,6 +433,7 @@ function App() {
           isSigner: false
         })
       );
+      console.log("remainingAccounts", remainingAccounts.length, remainingAccounts);
       return programInstance.methods
         .triggerInheritance()
         .accounts({
